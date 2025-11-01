@@ -1,0 +1,113 @@
+/* Container for the slider */
+.cards-slider-container {
+  padding: 40px 20px;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* --- IMPORTANT CHANGES ---
+  1. REMOVED `width: 280px`
+  2. REMOVED `max-width: 90%`
+  3. ADDED `margin: 15px;` to create a gap between slides.
+*/
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden; 
+  display: flex !important; /* !important to override slick's default */
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 15px; /* Adds spacing between cards */
+  height: auto; /* Allow card height to be natural */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Card image and icon (No changes) */
+.card-image-container {
+  position: relative;
+}
+
+.card-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-icon {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: #b86536;
+  color: white;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+/* Card content (No changes) */
+.card-content {
+  text-align: center;
+  padding: 40px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+/* Card button (No changes) */
+.card-button {
+  background-color: #b86536;
+  color: white;
+  padding: 9px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: inline-block;
+  align-self: center;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid black;
+}
+
+/* --- OPTIONAL: Style Slider Dots --- */
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #ccc; /* Inactive dot color */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #b86536; /* Active dot color (your theme green) */
+}
