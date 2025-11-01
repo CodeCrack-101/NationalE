@@ -12,7 +12,7 @@ const Navbar = () => {
     <div className="Nav">
       <nav>
         <NavLink to="/" onClick={closeMenu}>
-          <img className="logo" src="/image.png" alt="ShiriG Logo" />
+          <img className="logo" src="/logo.png" alt="ShiriG Logo" />
         </NavLink>
         
         {/* MODIFIED BUTTON: Shows 'X' or '☰' based on state */}
@@ -29,7 +29,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink to="/product" className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMenu}>
-              Products
+              Gallery
             </NavLink>
           </li>
           <li>

@@ -4,6 +4,8 @@ import Header from '../Header/Header';
 import InteriorDesign from '../InteriorDesign/InteriorDesign';
 import Boost from '../Boost/Boost'
 import Body from '../Body1/Body'
+import B from '../Body2/B'
+import Footer from '../Footer/Footer'
 
 
 const Home = () => {
@@ -14,6 +16,8 @@ const Home = () => {
       <Boost/>
       <Body/>
       <InteriorDesign/>
+      <B/>
+      <Footer/>
     </>
   );
 };

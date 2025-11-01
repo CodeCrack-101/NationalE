@@ -59,7 +59,7 @@ const FurnitureShowcase = () => {
               <img src="/i2.png" alt="Furniture detail 2" />
             </div>
             <div className="small-image-wrapper">
-              <img src="/i.png" alt="Furniture detail 3" />
+              <img src="/w4.png" alt="Furniture detail 3" />
             </div>
           </div>
         </div>
