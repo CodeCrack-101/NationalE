@@ -1,93 +1,77 @@
-import React from 'react';
-import './Section.css'; // Your existing CSS
-import { FaBullseye, FaEye, FaSlidersH } from 'react-icons/fa';
+import React, { useState } from 'react';
+import './Section.css'; // We will create this CSS file next
 
-// Import slider components
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-
-// Card data (your data)
+// Sample data for the cards
 const cardData = [
-  {
-    image: './i.png',
-    icon: <FaBullseye />,
-    title: 'Vinyl', // Added title back for example
-    text: ' Extremely durable, moisture-resistant, and easy to clean.' // Added text back
-  },
-  {
-    image: './i1.png',
-    icon: <FaEye />,
-    title: 'Foil',
-    text: 'A paper with a metallic, foil-like finish that can create a reflective, modern effect. '
-  },
-  {
-    image: './i2.png',
-    icon: <FaSlidersH />,
-    title: 'Textured Wallpaper',
-    text: 'A broad category that includes various materials and designs'
-  },
-  
+  {
+    img: './image1.png',
+    title: 'Geometric Elegance',
+    des: 'Bold abstract lines and modern shapes for a stunning feature wall.',
+  },
+  {
+    img: './image2.png',
+    title: 'Serene Botanicals',
+    des: 'Bring the calming beauty of nature indoors with subtle leaf patterns.',
+  },
+  {
+    img: './image3.png',
+    title: 'Cozy Textures',
+    des: 'Soft, fabric-like designs that add warmth and depth to any room.',
+  },
+  {
+    img: './image4.png',
+    title: 'Minimalist Mood',
+    des: 'Simple, clean patterns perfect for creating a bright and airy space.',
+  },
 ];
 
-// Reusable Card Component (No changes needed here)
-const Card = ({ image, icon, title, text }) => (
-  <div className="card">
-    <div className="card-image-container">
-      <img src={image} alt={title} className="card-image" />
-      <div className="card-icon">
-        {icon}
-      </div>
-    </div>
-    <div className="card-content">
-      <h3 className="card-title">{title}</h3>
-      <p className="card-text">{text}</p>
-      <a href="#" className="card-button">View More</a>
-    </div>
-  </div>
-);
+const InteriorDesign = () => {
+  // 'useState' holds the index of the currently active card
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-// Main Section Component (Now with Slider)
-const MissionSection = () => {
-  const settings = {
-    dots: true,       // Show navigation dots
-    infinite: true,   // Loop the slider
-    speed: 500,       // Transition speed
-    slidesToShow: 3,  // Show 3 cards at a time on desktop
-    slidesToScroll: 1, // Scroll 1 card at a time
-    responsive: [
-      {
-        breakpoint: 1024, // Tablet
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 600, // Mobile
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+  const prevSlide = () => {
+    // If it's the first slide, go to the last one. Otherwise, go back one.
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? cardData.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
   };
 
-  return (
-    <section className="cards-slider-container">
-      <Slider {...settings}>
-        {cardData.map((card, index) => (
-          <Card
-            key={index}
-            image={card.image}
-            icon={card.icon}
-            title={card.title}
-            text={card.text}
-          />
+  const nextSlide = () => {
+    // If it's the last slide, go to the first one. Otherwise, go forward one.
+    const isLastSlide = currentIndex === cardData.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  return (
+    <div className="slider-container">
+      {/* This is the track that moves. We use CSS transform to slide it. */}
+      <div
+        className="slider-track"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {/* We map over the data to create a card for each item */}
+        {cardData.map((item, index) => (
+          <div className="card" key={index}>
+            <img src={item.img} alt={item.title} className="card-image" />
+            <div className="card-content">
+              <h1>{item.title}</h1>
+              <p>{item.des}</p>
+              <button>View More</button>
+            </div>
+          </div>
         ))}
-      </Slider>
-    </section>
-  );
+      </div>
+
+      {/* Slider Controls */}
+      <button className="slider-btn prev" onClick={prevSlide}>
+        &#10094;
+      </button>
+      <button className="slider-btn next" onClick={nextSlide}>
+        &#10095;
+      </button>
+    </div>
+  );
 };
 
-export default MissionSection;
+export default InteriorDesign;

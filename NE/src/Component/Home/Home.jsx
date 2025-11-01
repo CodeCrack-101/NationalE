@@ -12,8 +12,8 @@ const Home = () => {
       <Navbar />
       <Header />
       <Boost/>
-      <InteriorDesign/>
       <Body/>
+      <InteriorDesign/>
     </>
   );
 };
