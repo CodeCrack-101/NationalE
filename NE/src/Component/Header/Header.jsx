@@ -13,8 +13,8 @@ const Header = () => {
         <TypeAnimation
           sequence={[
             'Hello,', 1000,
-            'Welcome To Our Natioanl Enterprise,', 1500,
-            'Connect Now', 1200,
+            'Welcome To Natioanl Enterprise,', 1500,
+            'Contact Now!', 1200,
           ]}
           wrapper="div"
           cursor={true}
