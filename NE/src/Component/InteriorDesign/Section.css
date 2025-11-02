@@ -1,94 +1,105 @@
-/* The main container that crops the content */
 .slider-container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding: 40px 0;
   position: relative;
-  width: 100%;
-  max-width: 600px; /* Adjust as needed */
-  margin: 2rem auto;
-  overflow: hidden; /* This is crucial! It hides the other cards */
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* The track that holds all the cards and moves horizontally */
 .slider-track {
   display: flex;
-  transition: transform 0.5s ease-in-out; /* The slide animation */
+  transition: transform 0.8s ease;
 }
 
-/* Each individual card */
-.card {
-  min-width: 100%; /* Each card takes the full width of the container */
-  box-sizing: border-box; /* Ensures padding doesn't affect width */
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.card-image {
+/* Card design */
+.team-card {
+  width: 320px;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  text-align: center;
+
+}
+
+.card-top {
+  background: #fdfafa;
+  padding: 40px 0 70px;
+  position: relative;
+}
+
+.card-top img {
   width: 100%;
-  height: 300px; /* Fixed height for the image */
-  object-fit: cover; /* Ensures the image covers the area well */
-  display: block;
+  height: 120%;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .card-content {
-  padding: 1.5rem;
-  background-color: #fff;
+  padding: 70px 20px 30px;
 }
 
-.card-content h1 {
-  font-size: 1.75rem;
-  margin: 0 0 0.5rem 0;
+.card-content h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .card-content p {
-  font-size: 1rem;
-  color: #555;
-  margin: 0 0 1rem 0;
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 20px;
 }
 
 .card-content button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #D87D4A;
+  padding: 10px 22px;
+  background: #D87D4A;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
 }
-
 .card-content button:hover {
-  background-color: #ffffff;
-  color: black;
+  background: #ffffff;
   border: 1px solid black;
+  color: black;
 }
 
-/* Previous and Next buttons */
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background-color: rgba(255, 255, 255, 0.7);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 1.5rem;
-  cursor: pointer;
+/* Dots */
+.dots {
   display: flex;
-  align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  margin-top: 15px;
+  gap: 8px;
 }
 
-.slider-btn:hover {
-  background-color: rgba(255, 255, 255, 1);
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #fdfafa;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.slider-btn.prev {
-  left: 10px;
+.dot.active {
+  background: #D87D4A;
+  transform: scale(1.2);
 }
 
-.slider-btn.next {
-  right: 10px;
+/* Responsive */
+@media (max-width: 600px) {
+  .team-card {
+    width: 100%;
+  }
 }

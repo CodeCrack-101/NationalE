@@ -1,75 +1,69 @@
-import React, { useState } from 'react';
-import './Section.css'; // We will create this CSS file next
+import React, { useState, useEffect } from "react";
+import "./Section.css";
 
-// Sample data for the cards
-const cardData = [
+const sliderData = [
   {
-    img: './image1.png',
-    title: 'Geometric Elegance',
-    des: 'Bold abstract lines and modern shapes for a stunning feature wall.',
+    img: "3d.png",
+    name: "3D Wallpaper",
+    desc: "Premium 3D textured designs that bring depth, realism, and luxury to your walls."
   },
   {
-    img: './image2.png',
-    title: 'Serene Botanicals',
-    des: 'Bring the calming beauty of nature indoors with subtle leaf patterns.',
+    img: "w1.png",
+    name: "Customized Wallpaper",
+    desc: "Tailor-made wallpaper crafted uniquely for your space, theme, and personal style."
   },
   {
-    img: './image3.png',
-    title: 'Cozy Textures',
-    des: 'Soft, fabric-like designs that add warmth and depth to any room.',
-  },
-  {
-    img: './image4.png',
-    title: 'Minimalist Mood',
-    des: 'Simple, clean patterns perfect for creating a bright and airy space.',
-  },
+    img: "f1.png",
+    name: "Wallpaper Accessories",
+    desc: "High-quality wallpaper tools and decorative accessories for premium finishing."
+  }
 ];
 
+
 const InteriorDesign = () => {
-  // 'useState' holds the index of the currently active card
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
-  const prevSlide = () => {
-    // If it's the first slide, go to the last one. Otherwise, go back one.
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? cardData.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
+  // Auto-slide every 3 seconds
+  useEffect(() => {
+    const autoSlide = setInterval(() => {
+      setIndex((prev) => (prev + 1) % sliderData.length);
+    }, 3000);
 
-  const nextSlide = () => {
-    // If it's the last slide, go to the first one. Otherwise, go forward one.
-    const isLastSlide = currentIndex === cardData.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
+    return () => clearInterval(autoSlide);
+  }, []);
 
   return (
     <div className="slider-container">
-      {/* This is the track that moves. We use CSS transform to slide it. */}
       <div
         className="slider-track"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        style={{ transform: `translateX(-${index * 100}%)` }}
       >
-        {/* We map over the data to create a card for each item */}
-        {cardData.map((item, index) => (
-          <div className="card" key={index}>
-            <img src={item.img} alt={item.title} className="card-image" />
-            <div className="card-content">
-              <h1>{item.title}</h1>
-              <p>{item.des}</p>
-              <button>View More</button>
+        {sliderData.map((p, i) => (
+          <div className="slide" key={i}>
+            <div className="team-card">
+              <div className="card-top">
+                <img src={p.img} alt={p.name} />
+              </div>
+              <div className="card-content">
+                <h3>{p.name}</h3>
+                <p>{p.desc}</p>
+                <button>View More</button>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Slider Controls */}
-      <button className="slider-btn prev" onClick={prevSlide}>
-        &#10094;
-      </button>
-      <button className="slider-btn next" onClick={nextSlide}>
-        &#10095;
-      </button>
+      {/* Dots */}
+      <div className="dots">
+        {sliderData.map((_, dotIndex) => (
+          <div
+            key={dotIndex}
+            className={`dot ${index === dotIndex ? "active" : ""}`}
+            onClick={() => setIndex(dotIndex)}
+          ></div>
+        ))}
+      </div>
     </div>
   );
 };
