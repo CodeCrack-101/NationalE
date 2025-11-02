@@ -9,6 +9,7 @@ import Urbano from './Component/Category/Urbano';
 import Texture from './Component/Category/Texture';
 import Flora from './Component/Category/Flora';
 import Product from './Component/Products/Products'
+import About from './Component/About/About'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/category/texture" element={<Texture />} />
         <Route path="/category/flora" element={<Flora />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );

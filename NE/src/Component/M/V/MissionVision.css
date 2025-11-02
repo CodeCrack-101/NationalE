@@ -1,0 +1,84 @@
+/* Import a clean font (optional, add to your main index.css) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  background-color: #fdfafa; /* Light grey background for contrast */
+  font-family: 'Poppins', sans-serif;
+}
+
+.all {
+  width: 90%;
+  max-width: 1000px; /* Constrains the width on large screens */
+  margin: 40px auto; /* Centers the component on the page */
+}
+
+.mission {
+  display: flex;
+  align-items: center; /* Vertically centers the content */
+  gap: 30px; /* Space between icon and text */
+  background-color: #fdfafa; /* White card background */
+  border-radius: 12px; /* Rounded corners for the card */
+  padding: 30px; /* Inner spacing */
+  margin-bottom: 30px; /* Space between the two cards */
+  overflow: hidden; /* Ensures shadow respects the border-radius */
+}
+
+/* Style for the circular icon wrapper */
+.mission-icon-wrapper {
+  width: 150px;  /* Fixed width for the circle */
+  height: 150px; /* Fixed height for the circle */
+  border-radius: 50%; /* Makes it a perfect circle */
+  background-color: #e0e0e0; /* Light grey background for the icon circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Prevents it from shrinking on smaller screens */
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+}
+
+/* Style for the icon itself */
+.mission-icon {
+  font-size: 70px; /* Large icon size */
+  color: #555; /* Icon color */
+}
+
+.m1 {
+  flex: 1; /* Allows the text block to take the remaining space */
+}
+
+.m1 h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.m1 p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .mission {
+    flex-direction: column; /* Stacks icon and text vertically */
+    text-align: center;   /* Centers the text */
+    padding: 25px;
+    gap: 25px;
+  }
+
+  /* This selector specifically targets the second card 
+    and reverses its column direction to keep the icon on the bottom,
+    matching your HTML order.
+  */
+  .mission:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+  
+  .m1 h2 {
+    font-size: 24px;
+  }
+}
