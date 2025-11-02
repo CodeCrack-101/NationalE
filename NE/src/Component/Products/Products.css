@@ -1,6 +1,7 @@
-.product-search-container {
+
+.product-search-container.product-search-container {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 2rem auto;
     background-color: #fff;
     padding: 2rem;

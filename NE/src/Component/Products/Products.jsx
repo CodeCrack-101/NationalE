@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Products.css'
 import Navbar from '../Navbar/Navbar';
-// import Footer from '../../Component/Footer/Footer'
+import Footer from '../../Component/Footer/Footer'
 // import Dial from '../../Component/Dial/Dial'
 
 const allProducts = [
@@ -151,7 +151,7 @@ const ProductSearch = () => {
         )}
       <button className='btn' onClick={()=>navigate('/contact')}>Enquiry Now</button>
       </div>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
 };
