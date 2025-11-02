@@ -6,6 +6,8 @@ import Boost from '../Boost/Boost'
 import Body from '../Body1/Body'
 import B from '../Body2/B'
 import Footer from '../Footer/Footer'
+import Download from '../Download/Download';
+import Choose from '../Choose/Choose';
 
 
 const Home = () => {
@@ -17,6 +19,8 @@ const Home = () => {
       <Body/>
       <InteriorDesign/>
       <B/>
+      <Download/>
+      <Choose/>
       <Footer/>
     </>
   );

@@ -1,0 +1,155 @@
+.why-choose-us-section {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Light green background */
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    padding: 0 20px;
+  }
+
+  .header-text {
+    flex: 1;
+    min-width: 300px; /* Ensure text doesn't get too small */
+    margin-right: 20px;
+  }
+
+  .header-title {
+    font-size: 3rem; /* Adjusted for visual match */
+    color: #000000; /* Darker green */
+    margin-bottom: 15px;
+    font-weight: 600; /* Slightly bolder */
+  }
+
+  .header-description {
+    font-size: 1rem;
+    color: #000000;
+    line-height: 1.6;
+    max-width: 700px; /* Control text width */
+  }
+
+  .header-button-wrapper {
+    flex-shrink: 0; /* Prevents button from shrinking */
+  }
+
+  .action-button { /* Renamed from join-now-button for clarity */
+    background-color: #D87D4A; /* Dark green button */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* For <a> tag */
+    display: inline-block; /* For <a> tag */
+  }
+
+  .action-button:hover {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid black; /* Lighter dark green on hover */
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 25px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .feature-card {
+    background-color: #fdfafa; /* Light green card background */
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes button to bottom */
+    min-height: 300px; /* Ensure cards have similar height */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Subtle shadow */
+  }
+
+  .feature-card.dark-theme { /* Renamed for clarity */
+    background-color: #fdfafa; /* Darker green for the first card */
+    color: #000000;
+  }
+
+  .feature-card.dark-theme .feature-title,
+  .feature-card.dark-theme .feature-description {
+    color: #000000; /* Ensure text is white for dark card */
+  }
+  
+  .feature-card.dark-theme .feature-icon svg {
+       fill: #ffffff; /* Make icon white for dark card */
+       stroke: #000000; /* Make icon stroke white */
+  }
+
+  .feature-icon {
+    margin-bottom: 20px;
+    display: flex;
+  }
+
+  .feature-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: #070707; /* Dark green icon color for light cards */
+    stroke: #ffffff; /* Dark green icon stroke */
+  }
+
+  .feature-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #000000; /* Dark green */
+    margin-bottom: 10px;
+  }
+
+  .feature-description {
+    font-size: 0.95rem;
+    color: #000000;
+    line-height: 1.5;
+    margin-bottom: 25px; /* Space before button */
+    flex-grow: 1; /* Allows description to take up available space */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .header-text {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    .header-title {
+      font-size: 2.5rem;
+    }
+    .why-choose-us-section {
+      padding: 40px 15px;
+    }
+    .features-grid {
+      grid-template-columns: 1fr; /* Single column on small screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header-title {
+      font-size: 2rem;
+    }
+    .feature-card {
+      padding: 25px;
+      min-height: auto;
+    }
+  }
