@@ -8,6 +8,8 @@ import B from '../Body2/B'
 import Footer from '../Footer/Footer'
 import Download from '../Download/Download';
 import Choose from '../Choose/Choose';
+import Shopreview from '../Shopreview/Shopreview'
+import Contact from '../Contact/Contact'
 
 
 const Home = () => {
@@ -21,6 +23,8 @@ const Home = () => {
       <B/>
       <Download/>
       <Choose/>
+      <Shopreview/>
+      <Contact/>
       <Footer/>
     </>
   );
