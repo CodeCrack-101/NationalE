@@ -1,45 +1,105 @@
+import React from 'react';
+import './Contact.css';
 
-import "./Contact.css";
-import Navbar from "../../Component/Navbar/Navbar";
-// import Dial from '../../Component/Dial/Dial'
+// Import icons
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 
-const ContactUs = () => {
-  
-
+const ContactPage = () => {
   return (
     <>
-      <Navbar />
-      {/* <Dial/> */}
-      <div className="contact-wrapper">
-        <div className="contact-container">
-          {/* Left Info Panel */}
-          
-          {/* Right Form Panel */}
-          <div className="contact-form">
-            <h3>Get In Touch</h3>
-            <form action="https://api.web3forms.com/submit" method="post" >
-            <input type="hidden" name="access_key" value="c4b5b87b-d096-46a9-b737-aa993db83b18"/> 
-              <input type="text" name="name" placeholder="Your Name" required />
-              <input type="email" name="email" placeholder="Your Email" />
-              <input
-                type="number"
-                name="mobile"
-                placeholder="Your Mobile"
-                required
-              />
-              <textarea
-                rows="5"
-                name="message"
-                placeholder="Your Message"
-                required
-              ></textarea>
-              <button type="submit">Send</button>
-            </form>
+    <Navbar/>
+    <div className="contact-page-wrapper">
+
+      {/* Top Section: Main Form + Newsletter */}
+      <div className="contact-top-section">
+        
+        {/* Main Contact Form */}
+        <div className="main-contact-form">
+          <form>
+            <div className="form-row">
+              <input type="email" placeholder="Email" />
+              <input type="text" placeholder="Phone" />
+            </div>
+            <div className="form-row">
+              <input type="text" placeholder="Name" />
+            </div>
+            <div className="form-row">
+              <textarea placeholder="Message" rows="6"></textarea>
+            </div>
+            <div className="form-row">
+              <button type="submit" className="submit-btn-main">Submit Button</button>
+            </div>
+          </form>
+        </div>
+
+        {/* Newsletter Form */}
+        <div className="newsletter-form">
+          <h3>Our Newsletters</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elt tellus luctus nec ullamcorper.</p>
+          <form>
+            <input type="email" placeholder="Email" />
+            <button type="submit" className="submit-btn-newsletter">Submit Button</button>
+          </form>
+        </div>
+      </div>
+
+      {/* Info Card Section */}
+      <div className="contact-info-section">
+        <div className="info-card">
+          <div className="info-icon">
+            <FaPhone />
+          </div>
+          <div className="info-text">
+            <h4>+91 98679 51140</h4>
+            <p>Fell Free To Contact Us Any Time.</p>
+          </div>
+        </div>
+        
+        <div className="info-card">
+          <div className="info-icon">
+            <FaEnvelope />
+          </div>
+          <div className="info-text">
+            <h4>nationalenterprise051@gmail.com</h4>
+            <p>Clear Your Querries By Sending Email</p>
+          </div>
+        </div>
+
+        <div className="info-card white-card"> {/* Special class for the white card */}
+          <div className="info-icon">
+            <FaMapMarkerAlt />
+          </div>
+          <div className="info-text">
+            <h4>Location</h4>
+            <p>SHOP NO -4-B
+SAHKAR SADAN CO-OP HSG SOCY
+SANT NAMDEO PATH 
+DOMBIVLI (EAST) 421 201
+DIST -THANE (MH)</p>
           </div>
         </div>
       </div>
+
+      {/* Map Section */}
+      <div className="contact-map-section">
+        <iframe
+         src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3767.589790177815!2d73.0956111!3d19.2131111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDEyJzQ3LjIiTiA3M8KwMDUnNDQuMiJF!5e0!3m2!1sen!2sin!4v1762147864857!5m2!1sen!2sin"
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="London Eye Map"
+        ></iframe>
+      </div>
+
+    </div>
+    <Footer/>
     </>
   );
-};
+}
 
-export default ContactUs;
+export default ContactPage;

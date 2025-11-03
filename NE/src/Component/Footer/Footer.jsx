@@ -59,7 +59,8 @@ const Footer = () => {
                 verticalAlign: "middle",
               }}
             ></lord-icon>
-            abcd@gmail.com
+            nationalenterprise051@gmail.com
+
           </p>
           <p>
             <lord-icon
@@ -72,7 +73,7 @@ const Footer = () => {
                 verticalAlign: "middle",
               }}
             ></lord-icon>
-            +91 ----------
+           +91 98679 51140
           </p>
           <p>
             <lord-icon
@@ -87,7 +88,7 @@ const Footer = () => {
                 verticalAlign: "middle",
               }}
             ></lord-icon>
-            Domviwali
+            Shop No -4-B Sahkar Sadan CO-OP HSG Socy Sant Namdev Path Dombivli (East) 421 201 Dist -Thane 
           </p>
         </div>
       </div>
