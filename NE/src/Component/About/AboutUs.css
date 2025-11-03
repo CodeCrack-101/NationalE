@@ -147,6 +147,7 @@
 .image-right-wrapper {
   position: absolute;
   width: 55%;
+  max-height: 390px;
   right: 0;
   top: 0; /* Aligns to the top of the .about-images-row container */
   z-index: 2;
@@ -155,7 +156,7 @@
   box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.image-right-wrapper img {
+.image-right-wrapper video {
   width: 100%;
   display: block;
 }

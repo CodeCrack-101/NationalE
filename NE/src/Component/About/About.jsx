@@ -10,10 +10,8 @@ import Footer from "../Footer/Footer";
 import MissionVision from "../M/V/MissionVision";
 
 // Using placeholder images. Replace these with your actual image URLs.
-const teamImageUrl =
-  "./i.png";
-const videoImageUrl =
-  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80";
+const teamImageUrl = "./i.png";
+const videoImageUrl = "/na.mp4";
 
 const AboutUs = () => {
   return (
@@ -33,16 +31,15 @@ const AboutUs = () => {
                 power to transform a space and reflect your personality. With
                 years of experience in wallpapers and interior décor, we bring
                 stylish designs and premium-quality materials to homes and
-                offices across Mumbai. 
+                offices across Mumbai.
               </p>
               <p>
-              From 3D wallpapers and textured designs
-                to vinyl, floral, and customized wall coverings, we offer a
-                diverse range that suits every taste and setting. Our wallpapers
-                are crafted to add beauty, durability, and comfort to your
-                interiors — helping you create spaces that inspire and impress.
-                At National Wallpaper, we turn plain walls into elegant
-                statements.
+                From 3D wallpapers and textured designs to vinyl, floral, and
+                customized wall coverings, we offer a diverse range that suits
+                every taste and setting. Our wallpapers are crafted to add
+                beauty, durability, and comfort to your interiors — helping you
+                create spaces that inspire and impress. At National Wallpaper,
+                we turn plain walls into elegant statements.
               </p>
             </div>
           </div>
@@ -54,19 +51,34 @@ const AboutUs = () => {
                 <FaRegCheckCircle />
               </div>
               <h4>Best Price Guaranteed</h4>
-              <p>We believe in transparent, upfront pricing. No hidden fees, no surprises—just top-tier service at the most competitive rates in the industry.</p>            </div>
+              <p>
+                We believe in transparent, upfront pricing. No hidden fees, no
+                surprises—just top-tier service at the most competitive rates in
+                the industry.
+              </p>{" "}
+            </div>
             <div className="feature-card">
               <div className="icon-wrapper black">
                 <FaChartLine />
               </div>
               <h4>Every Types Wallpaper Available</h4>
-              <p>Explore our vast collection of premium, high-quality wallpapers. We offer everything from stunning 3D designs to fully customizable options to match your unique style.</p>            </div>
+              <p>
+                Explore our vast collection of premium, high-quality wallpapers.
+                We offer everything from stunning 3D designs to fully
+                customizable options to match your unique style.
+              </p>{" "}
+            </div>
             <div className="feature-card">
               <div className="icon-wrapper red">
                 <FaUsers />
               </div>
               <h4>Professional Team</h4>
-              <p>Our professional team is here to support you. We provide expert guidance on everything from product selection to the best techniques for a flawless, effective application.</p>            </div>
+              <p>
+                Our professional team is here to support you. We provide expert
+                guidance on everything from product selection to the best
+                techniques for a flawless, effective application.
+              </p>{" "}
+            </div>
           </div>
 
           {/* Bottom Row: Overlapping Images */}
@@ -75,24 +87,34 @@ const AboutUs = () => {
               <img src={teamImageUrl} alt="Team meeting" />
             </div>
             <div className="image-right-wrapper">
-              <img src={videoImageUrl} alt="Video thumbnail" />
-              <div className="play-button">
-                <FaPlay className="play-icon" />
-              </div>
+              <video
+                src={videoImageUrl}
+                controls
+                autoPlay
+                loop
+                muted
+                className="about-video"
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
       </section>
-      <MissionVision/>
+      <MissionVision />
       <div className="contact-wrapper">
         <div className="contact-container">
           {/* Left Info Panel */}
-          
+
           {/* Right Form Panel */}
           <div className="contact-form">
             <h3>Get In Touch</h3>
-            <form action="https://api.web3forms.com/submit" method="post" >
-            <input type="hidden" name="access_key" value="c4b5b87b-d096-46a9-b737-aa993db83b18"/> 
+            <form action="https://api.web3forms.com/submit" method="post">
+              <input
+                type="hidden"
+                name="access_key"
+                value="c4b5b87b-d096-46a9-b737-aa993db83b18"
+              />
               <input type="text" name="name" placeholder="Your Name" required />
               <input type="email" name="email" placeholder="Your Email" />
               <input
