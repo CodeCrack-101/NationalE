@@ -3,6 +3,7 @@
     /* Using a font similar to the image. Import 'Inter' or 'Roboto' in your main index.css for best results */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
       Helvetica, Arial, sans-serif;
+      margin-top: 50px;
     background-color: #ffffff; /* A very light off-white/blue background */
     overflow-x: hidden; /* Prevents horizontal scroll from banner */
   }

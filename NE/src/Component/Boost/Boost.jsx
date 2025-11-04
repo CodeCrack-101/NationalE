@@ -8,7 +8,7 @@ function OverlapLayout() {
     <>
       <div className="overlap-container">
         <p>
-          <strong>National Enterprise</strong> offers a stunning range of premium wall wallpapers crafted to elevate any space. Whether you’re decorating your home, office, or showroom, we provide modern, classic, and 3D designs that bring your walls to life. Our wallpapers are made from high-quality materials.
+          <strong>National Wallpaper Enterprise</strong> offers a stunning range of premium wall wallpapers crafted to elevate any space. Whether you’re decorating your home, office, or showroom, we provide modern, classic, and 3D designs that bring your walls to life. Our wallpapers are made from high-quality materials.
         </p>
 
         {isExpanded && (

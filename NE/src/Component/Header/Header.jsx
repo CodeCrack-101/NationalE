@@ -13,7 +13,7 @@ const Header = () => {
         <TypeAnimation
           sequence={[
             'Hello,', 1000,
-            'Welcome To Natioanl Enterprise,', 1500,
+            'Welcome To Natioanl Wallpaper Enterprise,', 1500,
             'Contact Now!', 1200,
           ]}
           wrapper="div"

@@ -9,7 +9,7 @@ import Footer from '../Footer/Footer'
 import Download from '../Download/Download';
 import Choose from '../Choose/Choose';
 import Shopreview from '../Shopreview/Shopreview'
-import Contact from '../Contact/Contact'
+import Dial from '../Dial/Dial'
 
 
 const Home = () => {
@@ -52,6 +52,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Dial/>
       <Footer/>
     </>
   );

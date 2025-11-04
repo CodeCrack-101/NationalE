@@ -1,9 +1,10 @@
 import React from "react";
 import "./Footer.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"; // Removed 'useNavigate' since it wasn't used
 
 const Footer = () => {
-  const navigate = useNavigate();
+  // No need for navigate variable
+
   return (
     <footer className="footer">
       <div className="footer-content container">
@@ -14,32 +15,23 @@ const Footer = () => {
           </h1>
           <hr />
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, quam
-            ipsa sunt mollitia vitae dolor dolorum totam accusantium harum,
-            aperiam non eligendi natus? Doloremque obcaecati debitis, esse
-            consequatur enim odit.
-          </p>
+  National Wallpaper Enterprise offers a wide range of premium wallpapers,
+  including 3D, custom-printed, and textured designs, with expert installation
+  and a commitment to customer satisfaction. At National Wallpaper
+  Enterprise, every project is handled with precision, and services like
+  wallpaper removal and wall preparation are also available.
+</p>
         </div>
 
         {/* Links Section */}
         <div className="footer-section-links">
           <h3>Quick Links</h3>
           <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About Us</Link>
-            </li>
-            <li>
-              <Link to="/contact-us">Contact</Link>
-            </li>
-            <li>
-              <Link to="/product">Products</Link>
-            </li>
-            <li>
-              <Link to="/service">Services</Link>
-            </li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/product">Products</Link></li>
+            <li><Link to="/service">Services</Link></li>
           </ul>
         </div>
 
@@ -60,7 +52,6 @@ const Footer = () => {
               }}
             ></lord-icon>
             nationalenterprise051@gmail.com
-
           </p>
           <p>
             <lord-icon
@@ -73,8 +64,7 @@ const Footer = () => {
                 verticalAlign: "middle",
               }}
             ></lord-icon>
-           +91 98679 51140
-          </p>
++91 98679 51140          </p>
           <p>
             <lord-icon
               src="https://cdn.lordicon.com/onmwuuox.json"
@@ -88,22 +78,21 @@ const Footer = () => {
                 verticalAlign: "middle",
               }}
             ></lord-icon>
-            Shop No -4-B Sahkar Sadan CO-OP HSG Socy Sant Namdev Path Dombivli (East) 421 201 Dist -Thane 
-          </p>
+Shop No -4-B
+sahkar sadan co-op hsg society
+sant namdeo path 
+Dombivli (East) 421 201
+Thane Mumbai Maharashtra
+         </p>
         </div>
       </div>
 
       {/* Social Icons */}
       <div className="icon">
+        {/* Instagram */}
         <button
           className="icon-btn"
-          onClick={() =>
-            window.open(
-              "https://www.instagram.com/shrig_chair_service?igsh=MWFsbDM3OGFzZG5paQ==",
-              "_blank",
-              "noopener,noreferrer"
-            )
-          }
+          onClick={() => window.open('https://www.instagram.com/national_enterprise20/?utm_source=qr&igsh=MXg5ZXljeHZwbm44bQ%3D%3D#', '_blank', 'noopener,noreferrer')}
         >
           <lord-icon
             src="https://cdn.lordicon.com/roscsuft.json"
@@ -113,7 +102,11 @@ const Footer = () => {
           ></lord-icon>
         </button>
 
-        <button className="icon-btn">
+        {/* FIXED: Added onClick for Facebook (Example link) */}
+        <button 
+          className="icon-btn"
+          onClick={() => window.open('https://facebook.com/your-page', '_blank', 'noopener,noreferrer')}
+        >
           <lord-icon
             src="https://cdn.lordicon.com/lplofcfe.json"
             trigger="hover"
@@ -122,7 +115,11 @@ const Footer = () => {
           ></lord-icon>
         </button>
 
-        <button className="icon-btn">
+        {/* FIXED: Added onClick for Twitter (Example link) */}
+        <button 
+          className="icon-btn"
+          onClick={() => window.open('https://twitter.com/your-handle', '_blank', 'noopener,noreferrer')}
+        >
           <lord-icon
             src="https://cdn.lordicon.com/vnvsnvov.json"
             trigger="hover"
@@ -134,10 +131,11 @@ const Footer = () => {
 
       {/* Bottom */}
       <div className="footer-bottom">
-        &copy; {new Date().getFullYear()} National Enterprise. All Rights Reserved.
-        <br />
-        Devloped By Khan Obaid
-        <br />
+        &copy; {new Date().getFullYear()} National Wallpaper Enterprise. All Rights Reserved.
+        <br/>
+        {/* FIXED TYPO: "Devloped" to "Developed" */}
+        Developed By Khan Obaid
+        <br/>
         +91 9321282475
       </div>
     </footer>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./Section.css";
 
 const sliderData = [
@@ -22,6 +23,8 @@ const sliderData = [
 
 const InteriorDesign = () => {
   const [index, setIndex] = useState(0);
+
+  const navigate = useNavigate()
 
   // Auto-slide every 3 seconds
   useEffect(() => {
@@ -47,7 +50,7 @@ const InteriorDesign = () => {
               <div className="card-content">
                 <h3>{p.name}</h3>
                 <p>{p.desc}</p>
-                <button>View More</button>
+                <button onClick={()=>navigate('/product')} >View More</button>
               </div>
             </div>
           </div>

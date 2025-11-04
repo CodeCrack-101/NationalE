@@ -19,7 +19,7 @@ const allProducts = [
 
 
 const Flora = () => {
-  const whatsappNumber = "9321282475";
+  const whatsappNumber = "+91 98679 51140";
 
   return (
     <>

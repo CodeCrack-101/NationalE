@@ -19,7 +19,7 @@ const FurnitureShowcase = () => {
           <h4 className="pre-title">MODERN & ELEGANT</h4>
           <h1 className="main-title">Wallpaper to love now & forever</h1>
           <p className="description">
-            Discover furniture that's Wallpaper to be cherished, evolving with your life and style, making every moment at home even more special.
+            Discover  Wallpaper to be cherished, evolving with your life and style, making every moment at home even more special.
           </p>
           <div className="features-list">
             <div className="feature-item">

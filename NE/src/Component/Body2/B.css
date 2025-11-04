@@ -22,6 +22,7 @@
 }
 
 .search-bar {
+  margin-top: 20px;
   width: 100%;
   max-width: 600px;
   padding: 14px 20px;

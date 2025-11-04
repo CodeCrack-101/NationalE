@@ -19,7 +19,7 @@ const allProducts = [
 ];
 
 const Visitor = () => {
-  const whatsappNumber = "919594718112";
+  const whatsappNumber = "+91 98679 51140";
 
   return (
     <>

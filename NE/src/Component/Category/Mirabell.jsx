@@ -18,7 +18,7 @@ const allProducts = [
 ];
 
 const longe = () => {
-  const whatsappNumber = "919594718112";
+  const whatsappNumber = "+91 98679 51140";
 
   return (
     <>

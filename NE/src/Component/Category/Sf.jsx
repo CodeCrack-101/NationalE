@@ -18,8 +18,8 @@ const allProducts = [
 ];
 
 
-const Boss = () => {
-  const whatsappNumber = "919594718112";
+const Sf = () => {
+  const whatsappNumber = "+91 98679 51140";
 
   return (
     <>
@@ -53,6 +53,6 @@ const Boss = () => {
   );
 };
 
-export default Boss;
+export default Sf;
 
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Contact.css';
 
 // Import icons
@@ -7,6 +8,8 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 
 const ContactPage = () => {
+  const navigate = useNavigate()
+
   return (
     <>
     <Navbar/>
@@ -36,13 +39,19 @@ const ContactPage = () => {
 
         {/* Newsletter Form */}
         <div className="newsletter-form">
-          <h3>Our Newsletters</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elt tellus luctus nec ullamcorper.</p>
-          <form>
-            <input type="email" placeholder="Email" />
-            <button type="submit" className="submit-btn-newsletter">Submit Button</button>
-          </form>
-        </div>
+  <h3>View Our Exclusive Offers</h3>
+  <p>
+    We have special deals on 3D wallpaper, custom flooring, and carpet installations. See our work!
+  </p>
+  {/* This form will now send the user to your "/gallery" page. 
+    You can also just use an <a> link.
+  */}
+  <form  method="get">
+    <button type="submit" className="submit-btn-newsletter" onClick={()=>navigate('/product')} >
+      View Gallery
+    </button>
+  </form>
+</div>
       </div>
 
       {/* Info Card Section */}

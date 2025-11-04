@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Choose.css'
 const WhyChooseUs = () => {
+  const navigate = useNavigate()
   return (
     <>
       <section className="why-choose-us-section">
@@ -14,7 +16,7 @@ const WhyChooseUs = () => {
             </p>
           </div>
           <div className="header-button-wrapper">
-            <a href="#collection" className="action-button">Browse Collection</a>
+            <a href="#collection" onClick={()=>navigate('/contact')} className="action-button">Contact</a>
           </div>
         </div>
 
@@ -33,7 +35,7 @@ const WhyChooseUs = () => {
             <p className="feature-description">
               From classic patterns to 3D murals and custom designs, we have an extensive collection to suit every style for homes, offices, and commercial spaces.
             </p>
-            <a href="#learn-more" className="action-button">View More</a>
+            <a  onClick={()=>navigate('/product')} className="action-button">View More</a>
           </div>
 
           {/* Card 2: Premium Quality */}
@@ -50,7 +52,7 @@ const WhyChooseUs = () => {
               We use only premium materials, ensuring long-lasting wallpapers that maintain their
               vibrant colors and rich texture for years to come.
             </p>
-            <a href="#learn-more" className="action-button">View More</a>
+            <a  onClick={()=>navigate('/product')} className="action-button">View More</a>
           </div>
 
           {/* Card 3: Professional Installation */}
@@ -68,7 +70,7 @@ const WhyChooseUs = () => {
               Our expert installation team ensures a perfect alignment and a smooth,
               flawless finish for your walls every time.
             </p>
-            <a href="#learn-more" className="action-button">View More</a>
+            <a  onClick={()=>navigate('/product')} className="action-button">View More</a>
           </div>
         </div>
       </section>

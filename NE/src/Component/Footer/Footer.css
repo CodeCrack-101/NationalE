@@ -15,6 +15,10 @@
   margin: 0 auto;
 }
 
+.footer-section-links li
+{
+ margin-left: 35px;
+}
 .footer-section,
 .footer-section-links,
 .footer-section-contact {
