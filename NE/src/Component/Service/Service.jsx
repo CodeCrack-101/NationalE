@@ -59,7 +59,7 @@ const ServicesSection = () => {
               <div className="service-card-content">
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <a href="#">Enquiry Now</a>
+                <a href="/contact">Enquiry Now</a>
               </div>
             </div>
           ))}

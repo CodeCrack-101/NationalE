@@ -1,91 +1,135 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AboutUs.css";
 
-// Import icons from react-icons
-// Using FaRegCheckCircle, FaChartLine, and FaUsers for the features
-// Using FaPlay for the video button
-import { FaRegCheckCircle, FaChartLine, FaUsers, FaPlay } from "react-icons/fa";
+// Icons
+import { FaRegCheckCircle, FaChartLine, FaUsers } from "react-icons/fa";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import MissionVision from "../M/V/MissionVision";
 
-// Using placeholder images. Replace these with your actual image URLs.
+// Assets
 const teamImageUrl = "./i.png";
 const videoImageUrl = "/na.mp4";
 
 const AboutUs = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    message: "",
+    botcheck: ""
+  });
+
+  const [status, setStatus] = useState("");
+
+  const accessKey = "a1c547bf-0a07-4bea-85f7-60583905ac17";
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    const payload = {
+      access_key: accessKey,
+      name: formData.name,
+      email: formData.email,
+      mobile: formData.mobile,
+      message: formData.message,
+      subject: `New Inquiry from ${formData.name}`,
+      from_name: "National Wallpaper Enterprise Website",
+      botcheck: formData.botcheck
+    };
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        setStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", mobile: "", message: "", botcheck: "" });
+      } else {
+        setStatus(` ${result.message}`);
+      }
+    } catch (error) {
+      setStatus("Failed to send. Try again.");
+    }
+  };
+
   return (
     <>
       <Navbar />
+
       <section className="about-section">
         <div className="about-container">
-          {/* Top Row: Header and Description */}
+
+          {/* Header & Description */}
           <div className="about-top-row">
             <div className="about-header">
               <h5 className="about-subtitle">ABOUT US</h5>
               <h2>Introduction To National Enterprise</h2>
             </div>
+
             <div className="about-description">
               <p>
-                At National Wallpaper Enterprises, we believe every wall has the
-                power to transform a space and reflect your personality. With
-                years of experience in wallpapers and interior décor, we bring
-                stylish designs and premium-quality materials to homes and
-                offices across Mumbai.
+                At National Wallpaper Enterprises, we believe every wall has the power
+                to transform a space and reflect your personality. With years of
+                experience in wallpaper and décor, we deliver premium designs across Mumbai.
               </p>
               <p>
-                From 3D wallpapers and textured designs to vinyl, floral, and
-                customized wall coverings, we offer a diverse range that suits
-                every taste and setting. Our wallpapers are crafted to add
-                beauty, durability, and comfort to your interiors — helping you
-                create spaces that inspire and impress. At National Wallpaper,
-                we turn plain walls into elegant statements.
+                From 3D textures to custom designs, our wallpapers bring durability,
+                comfort and elegance to your interiors. We help turn ordinary walls into
+                extraordinary spaces.
               </p>
             </div>
           </div>
 
-          {/* Middle Row: Feature Cards */}
+          {/* Feature Cards */}
           <div className="about-features-row">
             <div className="feature-card">
               <div className="icon-wrapper red">
                 <FaRegCheckCircle />
               </div>
               <h4>Best Price Guaranteed</h4>
-              <p>
-                We believe in transparent, upfront pricing. No hidden fees, no
-                surprises—just top-tier service at the most competitive rates in
-                the industry.
-              </p>{" "}
+              <p>Transparent pricing with no hidden charges. Always affordable.</p>
             </div>
+
             <div className="feature-card">
               <div className="icon-wrapper black">
                 <FaChartLine />
               </div>
-              <h4>Every Types Wallpaper Available</h4>
-              <p>
-                Explore our vast collection of premium, high-quality wallpapers.
-                We offer everything from stunning 3D designs to fully
-                customizable options to match your unique style.
-              </p>{" "}
+              <h4>All Wallpaper Categories</h4>
+              <p>Huge collection including 3D, textured, vinyl & custom designs.</p>
             </div>
+
             <div className="feature-card">
               <div className="icon-wrapper red">
                 <FaUsers />
               </div>
               <h4>Professional Team</h4>
-              <p>
-                Our professional team is here to support you. We provide expert
-                guidance on everything from product selection to the best
-                techniques for a flawless, effective application.
-              </p>{" "}
+              <p>Expert guidance and flawless installation by trained specialists.</p>
             </div>
           </div>
 
-          {/* Bottom Row: Overlapping Images */}
+          {/* Images / Video */}
           <div className="about-images-row">
             <div className="image-left-wrapper">
               <img src={teamImageUrl} alt="Team meeting" />
             </div>
+
             <div className="image-right-wrapper">
               <video
                 src={videoImageUrl}
@@ -94,46 +138,68 @@ const AboutUs = () => {
                 loop
                 muted
                 className="about-video"
-              >
-                Your browser does not support the video tag.
-              </video>
+              ></video>
             </div>
           </div>
+
         </div>
       </section>
+
       <MissionVision />
+
+      {/* Contact Form */}
       <div className="contact-wrapper">
         <div className="contact-container">
-          {/* Left Info Panel */}
-
-          {/* Right Form Panel */}
           <div className="contact-form">
             <h3>Get In Touch</h3>
-            <form action="https://api.web3forms.com/submit" method="post">
+
+            <form onSubmit={handleSubmit}>
+              <input type="hidden" name="botcheck" value={formData.botcheck} />
+
               <input
-                type="hidden"
-                name="access_key"
-                value="c4b5b87b-d096-46a9-b737-aa993db83b18"
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                value={formData.name}
+                onChange={handleChange}
               />
-              <input type="text" name="name" placeholder="Your Name" required />
-              <input type="email" name="email" placeholder="Your Email" />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+              />
+
               <input
                 type="number"
                 name="mobile"
                 placeholder="Your Mobile"
                 required
+                value={formData.mobile}
+                onChange={handleChange}
               />
+
               <textarea
                 rows="5"
                 name="message"
                 placeholder="Your Message"
                 required
+                value={formData.message}
+                onChange={handleChange}
               ></textarea>
+
               <button type="submit">Send</button>
             </form>
+
+            {status && <p style={{ marginTop: "10px", fontWeight: "600" }}>{status}</p>}
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );
