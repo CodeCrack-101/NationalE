@@ -142,6 +142,10 @@
     .features-grid {
       grid-template-columns: 1fr; /* Single column on small screens */
     }
+    .action-button
+    {
+      margin-left: 95px;
+    }
   }
 
   @media (max-width: 480px) {

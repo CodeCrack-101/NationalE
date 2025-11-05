@@ -1,81 +1,62 @@
-/* Dial.css */
-
-.whatsapp_float {
-  position: fixed;
-  width: 60px; /* Kept your mobile width, but 60px is better for desktop */
-  height: 60px;
-  bottom: 40px;
-  right: 110px; /* Your custom position */
-  color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
-  z-index: 100;
-  /* ADDED: These center the icon inside the circle */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* Call Button Styles */
-.call_float {
-  position: fixed;
-  width: 60px; /* Kept your mobile width, but 60px is better for desktop */
-  height: 60px;
-  bottom: 40px; /* Adjusted to match WhatsApp button */
-  right: 30px; /* Your custom position */
-  color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
-  z-index: 100;
-  /* ADDED: These center the icon inside the circle */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* --- Lottie Animation Sizing --- */
-/* Styles for the <DotLottieReact> components */
-.h,
-.h1 {
-  width: 40px; /* Adjust size of the animation inside the circle */
-  height: 40px;
-}
-
-/* Your .display styles */
 .display {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* stack vertically */
+  gap: 15px; /* spacing between icons */
+  z-index: 100;
 }
 
-/* Mobile Responsiveness */
+/* Adjust button positions */
+.whatsapp_float,
+.call_float {
+  position: static; /* remove fixed so they follow parent flex layout */
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Lottie Animation size */
+
+.h1 {
+  width: 100px;
+  height: 50px;
+}
+
+.h 
+{
+  width: 50px;
+  height: 50px;
+}
+
+/* Mobile view */
 @media screen and (max-width: 767px) {
+  .display {
+    bottom: 20px;
+    right: 15px;
+    gap: 10px;
+  }
+
   .whatsapp_float,
   .call_float {
-    width: 45px; /* Slightly larger for mobile touch */
-    height: 45px;
-    bottom: 20px;
-    /* Centering for mobile */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 50px;
+    height: 50px;
   }
 
-  /* Your mobile positions */
-  .whatsapp_float {
-    right: 70px; /* Adjusted spacing */
-  }
-  .call_float {
-    right: 15px; /* Adjusted spacing */
-  }
+  .h{
+  width: 50px;
+  height: 50px;
+}
 
-  /* Your Lottie styles for mobile */
-  .h,
   .h1 {
-    width: 30px; /* Scaled down Lottie for smaller button */
-    height: 30px;
-    margin: 0; /* Removed margins to use flexbox centering */
+    width: 120px;
+    height: 50px;
   }
 }
