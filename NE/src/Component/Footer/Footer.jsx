@@ -105,7 +105,7 @@ Thane Mumbai Maharashtra
         {/* FIXED: Added onClick for Facebook (Example link) */}
         <button 
           className="icon-btn"
-          onClick={() => window.open('https://facebook.com/your-page', '_blank', 'noopener,noreferrer')}
+          onClick={() => window.open('https://www.facebook.com/profile.php?id=61583477099308', '_blank', 'noopener,noreferrer')}
         >
           <lord-icon
             src="https://cdn.lordicon.com/lplofcfe.json"

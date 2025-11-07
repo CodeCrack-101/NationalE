@@ -14,7 +14,7 @@ const ContactPage = () => {
     email: "",
     phone: "",
     message: "",
-    botcheck: "" // Honeypot field
+    botcheck: "", // Honeypot field
   });
 
   const [status, setStatus] = useState("");
@@ -24,7 +24,7 @@ const ContactPage = () => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -40,7 +40,7 @@ const ContactPage = () => {
       message: formData.message,
       subject: `New Inquiry from ${formData.name}`,
       from_name: "National Wallpaper Enterprise Website",
-      botcheck: formData.botcheck
+      botcheck: formData.botcheck,
     };
 
     try {
@@ -48,16 +48,22 @@ const ContactPage = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json"
+          Accept: "application/json",
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
       });
 
       const result = await res.json();
 
       if (result.success) {
         setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", phone: "", message: "", botcheck: "" });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          botcheck: "",
+        });
       } else {
         setStatus(`⚠️ Error: ${result.message}`);
       }
@@ -71,14 +77,16 @@ const ContactPage = () => {
       <Navbar />
 
       <div className="contact-page-wrapper">
-
         <div className="contact-top-section">
-
           <div className="main-contact-form">
             <form onSubmit={handleSubmit}>
-              
               {/* Honeypot Field - Invisible to users */}
-              <input type="text" name="botcheck" style={{ display: "none" }} onChange={handleChange} />
+              <input
+                type="text"
+                name="botcheck"
+                style={{ display: "none" }}
+                onChange={handleChange}
+              />
 
               <div className="form-row">
                 <input
@@ -165,7 +173,8 @@ const ContactPage = () => {
             <div>
               <h4>Location</h4>
               <p>
-                SHOP NO -4-B, SAHKAR SADAN CO-OP HSG SOCY<br />
+                SHOP NO -4-B, SAHKAR SADAN CO-OP HSG SOCY
+                <br />
                 SANT NAMDEO PATH, DOMBIVLI (EAST) 421201, THANE (MH)
               </p>
             </div>
@@ -173,15 +182,18 @@ const ContactPage = () => {
         </div>
 
         <div className="contact-map-section">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m..."
-            width="100%"
-            height="450"
-            style={{ border: 0 }}
-            loading="lazy"
-            title="Location Map"
-          ></iframe>
-        </div>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3767.5898841327084!2d73.095624!3d19.213106999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDEyJzQ3LjIiTiA3M8KwMDUnNDQuMyJF!5e0!3m2!1sen!2sin!4v1762527830780!5m2!1sen!2sin"
+    width="600"
+    height="450"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="National Wallpaper Enterprises Location"
+  ></iframe>
+</div>
+
       </div>
 
       <Footer />
