@@ -11,7 +11,8 @@ import Flora from './Component/Category/Flora';
 import Product from './Component/Products/Products'
 import About from './Component/About/About'
 import ContactPage from './Component/Contact/Contact';
-import Service from './Component/Service/Service'
+import Service from './Component/Service/Service';      
+import Threed from './Component/Category/Threed';      
 import './App.css'
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/service" element={<Service />} />
+        <Route path="/category/threed" element={<Threed/>} />
       </Routes>
     </BrowserRouter>
   );

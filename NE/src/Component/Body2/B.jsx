@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const allProducts = [
   { id: 1, name: 'Selfi Point', category: 'Wallpaper', imageUrl: './w1.png' },
+  { id: 1, name: '3D', category: 'Wallpaper', imageUrl: './3d11.png' },
   { id: 2, name: 'Canvas EW', category: 'Wallpaper', imageUrl: './w2.png' },
   { id: 3, name: 'Sky', category: 'Wallpaper', imageUrl: './w3.png' },
   { id: 4, name: 'Mirabell PVC', category: 'Wallpaper', imageUrl: './w4.png' },
@@ -31,7 +32,7 @@ const handleCategoryClick = (productName) => {
   else if (productName === 'Mirabell PVC') navigate(`/category/Mirabell`);
   else if (productName === 'Urbano') navigate(`/category/Urbano`);
   else if (productName === 'Texture ') navigate(`/category/Texture`);
-  else if (productName === 'Wall Flora') navigate(`/category/Flora`);
+  else if (productName === '3D') navigate(`/category/threed`);
 };
 
 
