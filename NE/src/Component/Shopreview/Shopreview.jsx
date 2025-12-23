@@ -4,24 +4,24 @@ import './ShopReviews.css';
 const reviewsData = [
   {
     id: 1,
-    text: "Bhai bhot achi service kiya hai wapis new jaise lag rahe hai aur aap ne jo price lagaya hai woh bhi affordable hai",
+    text: "Bhai bhot achi wallpaper service di hai, walls bilkul new jaise lag rahe hain. Design finishing ekdum perfect hai aur jo price bataya tha woh bhi affordable tha.",
     author: "Juniad Khan"
   },
   {
     id: 2,
-    text: "I called Shree chair service for my office chairs, and they repaired perfectly. The chairs feel brand New now . The technical on time and the price was reasonable too, Highly recommended.",
+    text: "I contacted them for wallpaper installation in my office, and the work was done perfectly. The walls look brand new now. The team was punctual, professional, and the pricing was very reasonable. Highly recommended.",
     author: "Faizan Khan"
   },
   {
     id: 3,
-    text: "Excellent service. Genuine part and Vikas explained everything about way of using the chair. Reasonable prize. Quick home service was provided with assurance",
-    author: "Afghan khan"
+    text: "Excellent wallpaper service. Quality material was used and everything was explained properly before installation. Reasonable pricing and quick home service with full assurance.",
+    author: "Afghan Khan"
   },
   {
     id: 4,
-    text: "Highly recommended for repair service and new installation of office chairs....because. experienced their work of excellence",
+    text: "Highly recommended for wallpaper installation and replacement work. Very professional team and outstanding finishing. Truly experienced and reliable service.",
     author: "Manihar Sohail"
-  }
+  }  
 ];
 
 const reviewUrl = "";
